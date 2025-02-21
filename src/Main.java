@@ -40,7 +40,7 @@ class Calculations {
         }
     }
     public int Calc(double a, double b, double x){
-        int y = (int)((a * x) / b);
+        int y = (int)((a * x) / b);//факториал должен быть целым числом, поэтому использовано явное приведение;
         if (y == 1 || y == 0){
             return 1;
         }
