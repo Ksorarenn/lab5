@@ -9,14 +9,11 @@ public class Main {
         System.out.println("Введите x: ");
         double x = in.nextDouble();
         Calculations s = new Calculations(a,b,x);
-        s.Calc(x);
         Calculations v = new Calculations(a,b,x);
-        v.Calc(a,b);
         Calculations z = new Calculations(a,b,x);
-        z.Calc(a,b,x);
-        System.out.printf("Значение первого выражения = %f \n", s.Calc(x));
-        System.out.printf("Значение первого выражения = %f \n", v.Calc(a,b));
-        System.out.printf("Значение первого выражения = %d \n", z.Calc(a,b,x));
+        System.out.printf("Значение первого выражения = %f \n", s.Calc1(x));
+        System.out.printf("Значение первого выражения = %f \n", v.Calc2(a,b));
+        System.out.printf("Значение первого выражения = %d \n", z.Calc3(a,b,x));
     }
 }
 class Calculations {
@@ -28,10 +25,10 @@ class Calculations {
         this.b = b;
         this.x = x;
     }
-    public double Calc(double x){
+    public double Calc1(double x){
         return 3.0 * x + 5.0;
     }
-    public double Calc(double a, double b){
+    public double Calc2(double a, double b){
         if(a - b == 0){
             return -1;
         }
@@ -39,7 +36,7 @@ class Calculations {
             return (a + b)/(a - b);
         }
     }
-    public int Calc(double a, double b, double x){
+    public int Calc3(double a, double b, double x){
         int y = (int)((a * x) / b);//факториал должен быть целым числом, поэтому использовано явное приведение;
         if (y == 1 || y == 0){
             return 1;
